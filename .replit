@@ -1,8 +1,20 @@
+# БЛОК 1. Подключение интерпретатора Python
+# Указывается модуль Python версии 3.11, который используется для запуска проекта.
 modules = ["python-3.11"]
 
+# БЛОК 2. Настройка системных зависимостей через Nix
+# В данном разделе задаются системные пакеты, необходимые для работы
+# библиотек визуализации, машинного обучения и обработки графики.
 [nix]
 packages = ["cairo", "ffmpeg-full", "freetype", "ghostscript", "glibcLocales", "gobject-introspection", "gtk3", "mailutils", "pkg-config", "qhull", "tcl", "tk"]
+
+# Канал Nix, из которого загружаются системные зависимости.
 channel = "stable-25_05"
 
+# БЛОК 3. Настройка режима агента Replit
+# Включает экспертный режим работы агента в среде Replit.
 [agent]
 expertMode = true
+
+[deployment]
+deploymentTarget = "cloudrun"
